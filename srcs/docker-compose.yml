@@ -1,0 +1,26 @@
+version: v2.20.3
+
+services:
+  nginx:
+    image: ngx
+    container_name: nginx
+    build: ./nginx
+    ports:
+      - "3000:443"
+      - "8080:80"
+    restart: always
+    networks:
+      - wp
+  mariadb:
+    image: db
+    container_name: mariadb
+    build: ./mariadb
+    ports:
+      - "5000:3306"
+    restart: always
+    networks:
+      - db
+  
+networks:
+  wp:
+  db:
