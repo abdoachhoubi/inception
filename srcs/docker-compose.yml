@@ -55,11 +55,11 @@ volumes:
   mariadb_data:
     type: none
     o: bind
-    device: /home/wordpress/mariadb_data
+    device: ~/Desktop/inception/data/wordpress/mariadb_data
   wordpress_data:
     type: none
     o: bind
-    device: /home/wordpress/wordpress_data
+    device: ~/Desktop/inception/data/wordpress/wordpress_data
 
 networks:
   inception:
