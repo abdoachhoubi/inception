@@ -1,8 +1,8 @@
 DC= docker-compose
 DC_PATH= ./srcs/docker-compose.yml
-WP_V= ./data/wordpress_data
-DB_V= ./data/mariadb_data
-V= ./data
+WP_V= ~/Desktop/inception/data/mariadb_data
+DB_V= ~/Desktop/inception/data/wordpress_data
+V= ~/Desktop/inception/data
 
 all:
 	mkdir -p ${WP_V}
@@ -16,12 +16,12 @@ restart:
 	${DC} -f ${DC_PATH} restart
 
 prune:
-	${DC} -f ${DC_PATH} --rmi all --volumes
+	${DC} -f ${DC_PATH} down --rmi all --volumes
 
 clean:
-	rm -rf ${WP_V}
-	rm -rf ${DB_V}
-	rm -rf ${V}
+	sudo rm -rf ${WP_V}
+	sudo rm -rf ${DB_V}
+	sudo rm -rf ${V}
 
 fclean: prune clean
 

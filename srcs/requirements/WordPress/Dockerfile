@@ -1,7 +1,7 @@
 FROM debian:buster
 
 # Install php and php-fpm and some php extensions plus wget and unzip
-RUN apt-get update && apt-get install -y unzip wget php-dom php7.3 php-fpm  php-mysql
+RUN apt-get update && apt-get install -y unzip wget php-dom php7.3 php-fpm php-mysql sendmail
 
 # Copy the script that will configure WordPress
 COPY script/config.sh script.sh
