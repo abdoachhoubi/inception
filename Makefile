@@ -12,6 +12,9 @@ all:
 down:
 	${DC} -f ${DC_PATH} down
 
+up:
+	${DC} -f ${DC_PATH} up
+
 restart:
 	${DC} -f ${DC_PATH} restart
 
