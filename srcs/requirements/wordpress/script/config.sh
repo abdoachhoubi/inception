@@ -12,6 +12,9 @@ mv wp-cli.phar /usr/local/bin/wp
 
 cd /var/www/html/
 
+# Create a wp-config.php file.
+wp config create --dbname=$WP_DATABASE --dbuser=$MYSQL_USER --dbpass=$MYSQL_USER_PASSWORD --dbhost=$DB_HOST --dbcharset="utf8" --dbcollate="" --allow-root
+
 # Install WordPress and create an admin user.
 wp core install --url=$WP_URL --title=$WP_SITE_TITLE --admin_user=$WP_ADMIN_USER \
     --admin_password=$WP_ADMIN_PASS --admin_email=$WP_ADMIN_EMAIL --allow-root

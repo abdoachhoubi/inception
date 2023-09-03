@@ -1,8 +1,8 @@
 DC= docker-compose
 DC_PATH= ./srcs/docker-compose.yml
-WP_V= ~/Desktop/inception/data/mariadb_data
-DB_V= ~/Desktop/inception/data/wordpress_data
-V= ~/Desktop/inception/data
+WP_V= /home/aachhoub/data/mariadb_data
+DB_V= /home/aachhoub/data/wordpress_data
+V= /home/aachhoub/data
 
 all:
 	mkdir -p ${WP_V}
