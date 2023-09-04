@@ -81,6 +81,11 @@ services:
       - 8080:8080
     networks:
       - inception
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
   
   ftp:
     build:
@@ -89,6 +94,8 @@ services:
     image: ftp
     container_name: ftp
     restart: always
+    env_file:
+      - ./.env
     ports:
       - 5555:21
     volumes:
