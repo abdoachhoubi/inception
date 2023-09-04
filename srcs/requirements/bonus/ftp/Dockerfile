@@ -2,9 +2,9 @@ FROM debian:bullseye
 
 RUN apt-get update && apt install vim vsftpd ftp -y
 
-COPY vsftpd.conf /etc/vsftpd.conf
+COPY ./config/vsftpd.conf /etc/vsftpd.conf
 
-COPY script.sh script.sh
+COPY ./script/script.sh script.sh
 
 RUN chmod +x script.sh
 
