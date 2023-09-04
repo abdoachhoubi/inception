@@ -51,6 +51,63 @@ services:
       - inception
     restart: always
 
+  adminer:
+    build:
+      context: requirements/bonus/adminer/
+      dockerfile: Dockerfile
+    image: adminer
+    container_name: adminer
+    restart: always
+    networks:
+      - inception
+
+  redis:
+    build:
+      context: requirements/bonus/redis
+      dockerfile: Dockerfile
+    image: redis
+    container_name: redis
+    restart: always
+    networks:
+      - inception
+  
+  cadvisor:
+    build:
+      context: requirements/bonus/cadvisor
+      dockerfile: Dockerfile
+    image: cadvisor
+    container_name: cadvisor
+    ports:
+      - 8080:8080
+    networks:
+      - inception
+  
+  ftp:
+    build:
+      context: requirements/bonus/ftp
+      dockerfile: Dockerfile
+    image: ftp
+    container_name: ftp
+    restart: always
+    ports:
+      - 5555:21
+    volumes:
+      - wordpress_data:/wordpress
+    networks:
+      - inception
+  
+  static_site:
+    build:
+      context: requirements/bonus/static_website
+      dockerfile: Dockerfile
+    image: static
+    container_name: static
+    restart: always
+    ports:
+      - 3000:80
+    networks:
+      - inception
+
 volumes:
   mariadb_data:
     driver_opts:
