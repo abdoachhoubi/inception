@@ -1,7 +1,0 @@
-# ignore all .env files in the cwd and the all the subdirectories
-.env
-.env.*
-*/.env
-*/.env.*
-**/.env
-**/.env.*

@@ -10,4 +10,6 @@ mariadb -e	"GRANT ALL PRIVILEGES ON * . * TO '$MYSQL_USER'@'%';"
 mariadb -e	"FLUSH PRIVILEGES;"
 # mariadb -e	"ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_ROOT_PASSWORD';"
 
-mariadbd
+service mariadb stop
+
+mariadbd-safe
